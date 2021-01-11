@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DetecteCase : MonoBehaviour
+public class GestionTourDeJeu : MonoBehaviour
 {
-
-    public string caseActuel;
+    public static string tourDeJeu;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        tourDeJeu = "blanc";
     }
 
     // Update is called once per frame
@@ -19,8 +18,8 @@ public class DetecteCase : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision collision)
+    public static void changeTourJeu()
     {
-        caseActuel = collision.collider.name;
+        tourDeJeu = tourDeJeu == "blanc" ? "noir" : "blanc";
     }
 }
