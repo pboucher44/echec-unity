@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class GestionSelectionPion : MonoBehaviour
 {
@@ -9,36 +11,47 @@ public class GestionSelectionPion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit) && hit.transform.gameObject.name.Contains("Pion"))
+        if (Physics.Raycast(ray, out hit) && hit.transform.gameObject.name.Contains("Pion") && Input.GetMouseButtonDown(0))
+        {
+            newClicledGameObject = hit.transform.gameObject;
+            if (oldClicledGameObject != null)
             {
-                newClicledGameObject = hit.transform.gameObject;
-                if (oldClicledGameObject != null)
+                if (oldClicledGameObject.transform.name.Contains("Noir"))
                 {
-                    if (oldClicledGameObject.transform.name.Contains("Noir"))
+                    oldClicledGameObject.GetComponent<Renderer>().material.color = Color.black;
+                }
+                else
+                {
+                    oldClicledGameObject.GetComponent<Renderer>().material.color = Color.white;
+                }
+            }
+
+            oldClicledGameObject = newClicledGameObject;
+
+            if (GestionTourDeJeu.tourDeJeu == "blanc")
+            {
+                if(newClicledGameObject.transform.name.Contains("Blanc"))
+                 {
+                   newClicledGameObject.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
+                 }
+                
+            } else
+            {
+                    if (newClicledGameObject.transform.name.Contains("Noir"))
                     {
-                        oldClicledGameObject.GetComponent<Renderer>().material.color = Color.black;
-                    }
-                    else
-                    {
-                        oldClicledGameObject.GetComponent<Renderer>().material.color = Color.white;
+                        newClicledGameObject.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
                     }
                 }
-
-                oldClicledGameObject = newClicledGameObject;
-
-                newClicledGameObject.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
             }
+            
         }
     }
-}
+

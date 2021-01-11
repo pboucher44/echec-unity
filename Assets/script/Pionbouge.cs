@@ -30,15 +30,21 @@ public class Pionbouge : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             // colorisation cases possible
-            if (Physics.Raycast(ray, out hit) && hit.transform.gameObject.name.Contains("Pion"))
+            if(GestionTourDeJeu.tourDeJeu == "blanc" && Physics.Raycast(ray, out hit) && hit.transform.gameObject.name.Contains("PionBlanc"))
+            {
+                colorcase(hit);
+            } 
+            else if (GestionTourDeJeu.tourDeJeu == "noir" && Physics.Raycast(ray, out hit) && hit.transform.gameObject.name.Contains("PionNoir"))
             {
                 colorcase(hit);
             }
+
 
             // déplacement du pion
             else if (Physics.Raycast(ray, out hit) && illuminatedCases.Contains(hit.transform.gameObject))
             {
                 avancePion(hit);
+                GestionTourDeJeu.changeTourJeu();
             }
         }
     }
@@ -95,6 +101,7 @@ public class Pionbouge : MonoBehaviour
         {
             gameObject.GetComponent<Renderer>().enabled = false;
         }
+        illuminatedCases = new List<GameObject>();
         while (newClicledGameObject.transform.position.z < hit.transform.gameObject.transform.position.z)
         {
             newClicledGameObject.transform.position = new Vector3(newClicledGameObject.transform.position.x, newClicledGameObject.transform.position.y, newClicledGameObject.transform.position.z + 5f);
