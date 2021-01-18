@@ -959,6 +959,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PionBlanc Variant (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6904752992095709434, guid: c802d554fb2060b4fb66015ec7179f62,
+        type: 3}
+      propertyPath: m_TagString
+      value: Blanc
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c802d554fb2060b4fb66015ec7179f62, type: 3}
 --- !u!1 &215782760
@@ -1563,6 +1568,7 @@ GameObject:
   - component: {fileID: 309913049}
   - component: {fileID: 309913048}
   - component: {fileID: 309913052}
+  - component: {fileID: 309913053}
   m_Layer: 0
   m_Name: 5E
   m_TagString: Untagged
@@ -1591,7 +1597,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309913046}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1602,7 +1608,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1673,6 +1679,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   caseOccuped: 0
+--- !u!114 &309913053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309913046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb7421649aa1e60419cc0faadfaaec86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &321269100
 GameObject:
   m_ObjectHideFlags: 0
@@ -2057,6 +2075,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PionBlanc Variant (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6904752992095709434, guid: c802d554fb2060b4fb66015ec7179f62,
+        type: 3}
+      propertyPath: m_TagString
+      value: Blanc
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c802d554fb2060b4fb66015ec7179f62, type: 3}
 --- !u!1 &387552282
@@ -2318,6 +2341,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PionBlanc Variant (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6904752992095709434, guid: c802d554fb2060b4fb66015ec7179f62,
+        type: 3}
+      propertyPath: m_TagString
+      value: Blanc
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c802d554fb2060b4fb66015ec7179f62, type: 3}
@@ -3640,6 +3668,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PionNoir Variant (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6863832392830788230, guid: 30940e2183e02524a8f807c9160b22b5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Noir
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30940e2183e02524a8f807c9160b22b5, type: 3}
 --- !u!1 &544761671 stripped
@@ -4025,6 +4058,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PionNoir Variant (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6863832392830788230, guid: 30940e2183e02524a8f807c9160b22b5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Noir
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30940e2183e02524a8f807c9160b22b5, type: 3}
@@ -4790,6 +4828,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PionNoir Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6863832392830788230, guid: 30940e2183e02524a8f807c9160b22b5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Noir
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30940e2183e02524a8f807c9160b22b5, type: 3}
 --- !u!1 &767796974
@@ -4997,6 +5040,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PionNoir Variant (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6863832392830788230, guid: 30940e2183e02524a8f807c9160b22b5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Noir
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30940e2183e02524a8f807c9160b22b5, type: 3}
@@ -5633,6 +5681,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PionBlanc Variant (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6904752992095709434, guid: c802d554fb2060b4fb66015ec7179f62,
+        type: 3}
+      propertyPath: m_TagString
+      value: Blanc
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c802d554fb2060b4fb66015ec7179f62, type: 3}
 --- !u!1001 &1113182144
@@ -5716,6 +5769,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PionNoir Variant (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6863832392830788230, guid: 30940e2183e02524a8f807c9160b22b5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Noir
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30940e2183e02524a8f807c9160b22b5, type: 3}
@@ -6385,6 +6443,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PionBlanc Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6904752992095709434, guid: c802d554fb2060b4fb66015ec7179f62,
+        type: 3}
+      propertyPath: m_TagString
+      value: Blanc
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c802d554fb2060b4fb66015ec7179f62, type: 3}
@@ -7254,6 +7317,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PionNoir Variant (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6863832392830788230, guid: 30940e2183e02524a8f807c9160b22b5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Noir
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30940e2183e02524a8f807c9160b22b5, type: 3}
 --- !u!1 &1447322843
@@ -7640,6 +7708,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PionNoir Variant (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6863832392830788230, guid: 30940e2183e02524a8f807c9160b22b5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Noir
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30940e2183e02524a8f807c9160b22b5, type: 3}
 --- !u!1 &1488229958
@@ -7958,6 +8031,7 @@ GameObject:
   - component: {fileID: 1595548771}
   - component: {fileID: 1595548772}
   - component: {fileID: 1595548773}
+  - component: {fileID: 1595548774}
   m_Layer: 0
   m_Name: 4D
   m_TagString: Untagged
@@ -8023,7 +8097,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595548767}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -8034,7 +8108,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8068,6 +8142,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   caseOccuped: 0
+--- !u!114 &1595548774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595548767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb7421649aa1e60419cc0faadfaaec86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1623600687
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8149,6 +8235,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PionBlanc Variant (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6904752992095709434, guid: c802d554fb2060b4fb66015ec7179f62,
+        type: 3}
+      propertyPath: m_TagString
+      value: Blanc
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c802d554fb2060b4fb66015ec7179f62, type: 3}
@@ -9973,6 +10064,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PionNoir Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6863832392830788230, guid: 30940e2183e02524a8f807c9160b22b5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Noir
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30940e2183e02524a8f807c9160b22b5, type: 3}
 --- !u!1 &1939238353
@@ -10304,6 +10400,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PionBlanc Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6904752992095709434, guid: c802d554fb2060b4fb66015ec7179f62,
+        type: 3}
+      propertyPath: m_TagString
+      value: Blanc
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c802d554fb2060b4fb66015ec7179f62, type: 3}
@@ -11542,6 +11643,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PionBlanc Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6904752992095709434, guid: c802d554fb2060b4fb66015ec7179f62,
+        type: 3}
+      propertyPath: m_TagString
+      value: Blanc
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c802d554fb2060b4fb66015ec7179f62, type: 3}
