@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using System;
+
 
 public class Pionbouge : MonoBehaviour
 {
@@ -15,10 +17,14 @@ public class Pionbouge : MonoBehaviour
     string colorInFront;
 
     int num;
+    string sentence;
+    char[] letterCase;
 
     // Start is called before the first frame update
     void Start()
     {
+        sentence = "ABCDEFGH";
+        letterCase = sentence.ToCharArray();
     }
 
     // Update is called once per frame
@@ -66,28 +72,79 @@ public class Pionbouge : MonoBehaviour
 
         newCaseUnder = GameObject.Find(newDetecteCase.caseActuel);
         newCaseUnder.GetComponent<Renderer>().enabled = true;
-        newCaseUnder.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
 
         illuminatedCases.Add(newCaseUnder);
 
-        // si le pion est sur sa premiere case alors il peux bouger de 2 cases
-        if (newDetecteCase.caseActuel.Contains("2"))
-        {
-            num = int.Parse(newDetecteCase.caseActuel[0].ToString()) + 2;
-            colorInFront = num.ToString() + newDetecteCase.caseActuel[1];
-            frontCase = GameObject.Find(colorInFront);
-            frontCase.GetComponent<Renderer>().enabled = true;
-            frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
-
-            illuminatedCases.Add(frontCase);
-        }
-
+        
+        num = int.Parse(newDetecteCase.caseActuel[0].ToString()) - 1;
+        colorInFront = num.ToString() + newDetecteCase.caseActuel[1];
+        print(newDetecteCase.caseActuel[1].ToString());
+        frontCase = GameObject.Find(colorInFront);
+        frontCase.GetComponent<Renderer>().enabled = true;
+        frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
+        illuminatedCases.Add(frontCase);
+        
         num = int.Parse(newDetecteCase.caseActuel[0].ToString()) + 1;
         colorInFront = num.ToString() + newDetecteCase.caseActuel[1];
         frontCase = GameObject.Find(colorInFront);
         frontCase.GetComponent<Renderer>().enabled = true;
         frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
         illuminatedCases.Add(frontCase);
+
+
+        // détection de la case a gauche
+        if (newDetecteCase.caseActuel[1] != 'A')
+        {
+            num = int.Parse(newDetecteCase.caseActuel[0].ToString());
+            int index = Array.IndexOf(letterCase, newDetecteCase.caseActuel[1]);
+            colorInFront = num.ToString() + letterCase[index - 1];
+            frontCase = GameObject.Find(colorInFront);
+            frontCase.GetComponent<Renderer>().enabled = true;
+            frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
+            illuminatedCases.Add(frontCase);
+
+            num = int.Parse(newDetecteCase.caseActuel[0].ToString()) + 1;
+            colorInFront = num.ToString() + letterCase[index - 1];
+            frontCase = GameObject.Find(colorInFront);
+            frontCase.GetComponent<Renderer>().enabled = true;
+            frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
+            illuminatedCases.Add(frontCase);
+
+            num = int.Parse(newDetecteCase.caseActuel[0].ToString()) - 1;
+            colorInFront = num.ToString() + letterCase[index - 1];
+            frontCase = GameObject.Find(colorInFront);
+            frontCase.GetComponent<Renderer>().enabled = true;
+            frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
+            illuminatedCases.Add(frontCase);
+        }
+
+        // détection de la case a droite
+        if (newDetecteCase.caseActuel[1] != 'H')
+        {
+            num = int.Parse(newDetecteCase.caseActuel[0].ToString());
+            int index = Array.IndexOf(letterCase, newDetecteCase.caseActuel[1]);
+            colorInFront = num.ToString() + letterCase[index + 1];
+            frontCase = GameObject.Find(colorInFront);
+            frontCase.GetComponent<Renderer>().enabled = true;
+            frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
+            illuminatedCases.Add(frontCase);
+
+            num = int.Parse(newDetecteCase.caseActuel[0].ToString()) + 1;
+            colorInFront = num.ToString() + letterCase[index + 1];
+            frontCase = GameObject.Find(colorInFront);
+            frontCase.GetComponent<Renderer>().enabled = true;
+            frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
+            illuminatedCases.Add(frontCase);
+
+            num = int.Parse(newDetecteCase.caseActuel[0].ToString()) - 1;
+            colorInFront = num.ToString() + letterCase[index + 1];
+            frontCase = GameObject.Find(colorInFront);
+            frontCase.GetComponent<Renderer>().enabled = true;
+            frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
+            illuminatedCases.Add(frontCase);
+        }
+
+
 
         newCaseUnder = GameObject.Find(newDetecteCase.caseActuel);
         newCaseUnder.GetComponent<Renderer>().enabled = true;
@@ -102,17 +159,8 @@ public class Pionbouge : MonoBehaviour
             gameObject.GetComponent<Renderer>().enabled = false;
         }
         illuminatedCases = new List<GameObject>();
-        while (newClicledGameObject.transform.position.z < hit.transform.gameObject.transform.position.z)
-        {
-            newClicledGameObject.transform.position = new Vector3(newClicledGameObject.transform.position.x, newClicledGameObject.transform.position.y, newClicledGameObject.transform.position.z + 5f);
-            if (newClicledGameObject.transform.name.Contains("Noir"))
-            {
-                newClicledGameObject.GetComponent<Renderer>().material.color = Color.black;
-            }
-            else
-            {
-                newClicledGameObject.GetComponent<Renderer>().material.color = Color.white;
-            }
-        }
+
+        newClicledGameObject.transform.position = new Vector3(hit.transform.position.x, hit.transform.position.y, hit.transform.position.z);
+
     }
 }

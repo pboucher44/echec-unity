@@ -19,8 +19,28 @@ public class DetecteCase : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
-        caseActuel = collision.collider.name;
+        if(!collision.gameObject.name.Contains("Pion"))
+        {
+            caseActuel = collision.gameObject.name;
+        }
+
+        if (GestionTourDeJeu.tourDeJeu == "blanc")
+        {
+            if (collision.gameObject.name.Contains("PionBlanc"))
+            {
+                Destroy(collision.gameObject);
+            }
+        }
+        else if (GestionTourDeJeu.tourDeJeu == "noir")
+        {
+            if (collision.gameObject.name.Contains("PionNoir"))
+            {
+                Destroy(collision.gameObject);
+            }
+        }
     }
-}
+    }
+    
+
