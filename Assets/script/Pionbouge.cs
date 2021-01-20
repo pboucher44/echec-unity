@@ -75,21 +75,26 @@ public class Pionbouge : MonoBehaviour
 
         illuminatedCases.Add(newCaseUnder);
 
-        
-        num = int.Parse(newDetecteCase.caseActuel[0].ToString()) - 1;
-        colorInFront = num.ToString() + newDetecteCase.caseActuel[1];
-        print(newDetecteCase.caseActuel[1].ToString());
-        frontCase = GameObject.Find(colorInFront);
-        frontCase.GetComponent<Renderer>().enabled = true;
-        frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
-        illuminatedCases.Add(frontCase);
-        
-        num = int.Parse(newDetecteCase.caseActuel[0].ToString()) + 1;
-        colorInFront = num.ToString() + newDetecteCase.caseActuel[1];
-        frontCase = GameObject.Find(colorInFront);
-        frontCase.GetComponent<Renderer>().enabled = true;
-        frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
-        illuminatedCases.Add(frontCase);
+        if (int.Parse(newDetecteCase.caseActuel[0].ToString()) != 1)
+        {
+            num = int.Parse(newDetecteCase.caseActuel[0].ToString()) - 1;
+            colorInFront = num.ToString() + newDetecteCase.caseActuel[1];
+            print(newDetecteCase.caseActuel[1].ToString());
+            frontCase = GameObject.Find(colorInFront);
+            frontCase.GetComponent<Renderer>().enabled = true;
+            frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
+            illuminatedCases.Add(frontCase);
+        }
+
+        if (int.Parse(newDetecteCase.caseActuel[0].ToString()) != 8)
+        {
+            num = int.Parse(newDetecteCase.caseActuel[0].ToString()) + 1;
+            colorInFront = num.ToString() + newDetecteCase.caseActuel[1];
+            frontCase = GameObject.Find(colorInFront);
+            frontCase.GetComponent<Renderer>().enabled = true;
+            frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
+            illuminatedCases.Add(frontCase);
+        }
 
 
         // détection de la case a gauche
@@ -103,19 +108,25 @@ public class Pionbouge : MonoBehaviour
             frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
             illuminatedCases.Add(frontCase);
 
-            num = int.Parse(newDetecteCase.caseActuel[0].ToString()) + 1;
-            colorInFront = num.ToString() + letterCase[index - 1];
-            frontCase = GameObject.Find(colorInFront);
-            frontCase.GetComponent<Renderer>().enabled = true;
-            frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
-            illuminatedCases.Add(frontCase);
+            if (int.Parse(newDetecteCase.caseActuel[0].ToString()) != 8)
+            {
+                num = int.Parse(newDetecteCase.caseActuel[0].ToString()) + 1;
+                colorInFront = num.ToString() + letterCase[index - 1];
+                frontCase = GameObject.Find(colorInFront);
+                frontCase.GetComponent<Renderer>().enabled = true;
+                frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
+                illuminatedCases.Add(frontCase);
+            }
 
-            num = int.Parse(newDetecteCase.caseActuel[0].ToString()) - 1;
-            colorInFront = num.ToString() + letterCase[index - 1];
-            frontCase = GameObject.Find(colorInFront);
-            frontCase.GetComponent<Renderer>().enabled = true;
-            frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
-            illuminatedCases.Add(frontCase);
+            if (int.Parse(newDetecteCase.caseActuel[0].ToString()) != 1)
+            {
+                num = int.Parse(newDetecteCase.caseActuel[0].ToString()) - 1;
+                colorInFront = num.ToString() + letterCase[index - 1];
+                frontCase = GameObject.Find(colorInFront);
+                frontCase.GetComponent<Renderer>().enabled = true;
+                frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
+                illuminatedCases.Add(frontCase);
+            }
         }
 
         // détection de la case a droite
@@ -129,19 +140,25 @@ public class Pionbouge : MonoBehaviour
             frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
             illuminatedCases.Add(frontCase);
 
-            num = int.Parse(newDetecteCase.caseActuel[0].ToString()) + 1;
-            colorInFront = num.ToString() + letterCase[index + 1];
-            frontCase = GameObject.Find(colorInFront);
-            frontCase.GetComponent<Renderer>().enabled = true;
-            frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
-            illuminatedCases.Add(frontCase);
+            if (int.Parse(newDetecteCase.caseActuel[0].ToString()) != 8)
+            {
+                num = int.Parse(newDetecteCase.caseActuel[0].ToString()) + 1;
+                colorInFront = num.ToString() + letterCase[index + 1];
+                frontCase = GameObject.Find(colorInFront);
+                frontCase.GetComponent<Renderer>().enabled = true;
+                frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
+                illuminatedCases.Add(frontCase);
+            }
 
-            num = int.Parse(newDetecteCase.caseActuel[0].ToString()) - 1;
-            colorInFront = num.ToString() + letterCase[index + 1];
-            frontCase = GameObject.Find(colorInFront);
-            frontCase.GetComponent<Renderer>().enabled = true;
-            frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
-            illuminatedCases.Add(frontCase);
+            if (int.Parse(newDetecteCase.caseActuel[0].ToString()) != 1)
+            {
+                num = int.Parse(newDetecteCase.caseActuel[0].ToString()) - 1;
+                colorInFront = num.ToString() + letterCase[index + 1];
+                frontCase = GameObject.Find(colorInFront);
+                frontCase.GetComponent<Renderer>().enabled = true;
+                frontCase.GetComponent<Renderer>().material.color = new Color(1.0f, 0.64f, 0.0f);
+                illuminatedCases.Add(frontCase);
+            }
         }
 
 
